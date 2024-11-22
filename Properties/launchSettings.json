@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AZF2S_Backend": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7273",
+      "launchBrowser": false
+    }
+  }
+}
