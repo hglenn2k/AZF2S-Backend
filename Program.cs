@@ -1,13 +1,20 @@
-using Microsoft.Azure.Functions.Worker.Builder;
+using AZF2S_Backend.Service.ThirdParty;
+using AZF2S_Backend.Service.ThirdParty.Interface;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
-var builder = FunctionsApplication.CreateBuilder(args);
+var host = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults()
+    .ConfigureServices(services =>
+    {
+        // Third-party services
+        services.AddScoped<IAppInsightsService, AppInsightsService>();
+        services.AddScoped<IMongoDbService, MongoDbService>();
+        services.AddScoped<IGoogleSheetService, GoogleSheetService>();
+        services.AddScoped<IMailchimpService, MailchimpService>();
+        services.AddScoped<INodeBbService, NodeBbService>();
+        services.AddScoped<ISendInBlueService, SendInBlueService>();
+    })
+    .Build();
 
-builder.ConfigureFunctionsWebApplication();
-
-// Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
-// builder.Services
-//     .AddApplicationInsightsTelemetryWorkerService()
-//     .ConfigureFunctionsApplicationInsights();
-
-builder.Build().Run();
+host.Run();

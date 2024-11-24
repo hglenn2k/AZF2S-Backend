@@ -56,12 +56,13 @@
 			"problemMatcher": "$msCompile"
 		},
 		{
+			"label": "func: host start",
 			"type": "func",
 			"dependsOn": "build (functions)",
 			"options": {
-				"cwd": "${workspaceFolder}/bin/Debug/net9.0"
+			  "cwd": "${workspaceFolder}/bin/Debug/net9.0"
 			},
-			"command": "host start",
+			"command": "host start --dotnet-isolated-debug",
 			"isBackground": true,
 			"problemMatcher": "$func-dotnet-watch"
 		}
