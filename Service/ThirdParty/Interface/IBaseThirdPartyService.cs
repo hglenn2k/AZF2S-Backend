@@ -4,6 +4,6 @@ namespace AZF2S_Backend.Service.ThirdParty.Interface
 {
     public interface IBaseThirdPartyService
     {
-        Task<ServiceResponse<bool>> Smoketest();
+        Task<ServiceResponse<bool>> SmoketestAsync();
     }
 }

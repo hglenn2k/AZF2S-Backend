@@ -34,12 +34,12 @@ public class SmoketestController(
         var response = req.CreateResponse(HttpStatusCode.OK);
         var results = new Dictionary<string, Task<ServiceResponse<bool>>>
         {
-            { "AppInsights", _appInsights.Smoketest() },
-            { "MongoDB", _mongoDb.Smoketest() },
-            { "GoogleSheets", _googleSheet.Smoketest() },
-            { "MailChimp", _mailchimp.Smoketest() },
-            { "NodeBB", _nodeBb.Smoketest() },
-            { "SendInBlue", _sendInBlue.Smoketest() }
+            { "AppInsights", _appInsights.SmoketestAsync() },
+            { "MongoDB", _mongoDb.SmoketestAsync() },
+            { "GoogleSheets", _googleSheet.SmoketestAsync() },
+            { "MailChimp", _mailchimp.SmoketestAsync() },
+            { "NodeBB", _nodeBb.SmoketestAsync() },
+            { "SendInBlue", _sendInBlue.SmoketestAsync() }
         };
 
         await Task.WhenAll(results.Values);
@@ -60,7 +60,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting AppInsights smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _appInsights.Smoketest();
+        var result = await _appInsights.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
@@ -71,7 +71,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting MongoDB smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _mongoDb.Smoketest();
+        var result = await _mongoDb.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
@@ -82,7 +82,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting Google Sheets smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _googleSheet.Smoketest();
+        var result = await _googleSheet.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
@@ -93,7 +93,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting MailChimp smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _mailchimp.Smoketest();
+        var result = await _mailchimp.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
@@ -104,7 +104,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting NodeBB smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _nodeBb.Smoketest();
+        var result = await _nodeBb.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
@@ -115,7 +115,7 @@ public class SmoketestController(
     {
         _logger.LogInformation("Starting SendInBlue smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _sendInBlue.Smoketest();
+        var result = await _sendInBlue.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }
