@@ -6,7 +6,7 @@
     "azureFunctions.preDeployTask": "publish (functions)",
     "azureFunctions.pickProcessTimeout": 90,
     "azurite.location": ".azurite",
-    "azurite.blobHost": "http://127.0.0.1:10000",
-    "azurite.queueHost": "http://127.0.0.1:10001",
-    "azurite.tableHost": "http://127.0.0.1:10002"
+    "azurite.blobHost": "127.0.0.1",
+    "azurite.queueHost": "127.0.0.1",
+    "azurite.tableHost": "127.0.0.1"
 }
