@@ -62,7 +62,7 @@
 			"options": {
 			  "cwd": "${workspaceFolder}/bin/Debug/net9.0"
 			},
-			"command": "host start --dotnet-isolated-debug",
+			"command": "host start",
 			"isBackground": true,
 			"problemMatcher": "$func-dotnet-watch"
 		}
