@@ -14,7 +14,7 @@ public class SmoketestController(
     IGoogleSheetService googleSheet,
     IMailchimpService mailchimp,
     INodeBbService nodeBb,
-    ISendInBlueService sendInBlue,
+    IBrevoService brevo,
     ILogger<SmoketestController> logger)
 {
     private readonly IAppInsightsService _appInsights = appInsights;
@@ -22,7 +22,7 @@ public class SmoketestController(
     private readonly IGoogleSheetService _googleSheet = googleSheet;
     private readonly IMailchimpService _mailchimp = mailchimp;
     private readonly INodeBbService _nodeBb = nodeBb;
-    private readonly ISendInBlueService _sendInBlue = sendInBlue;
+    private readonly IBrevoService _brevo = brevo;
     private readonly ILogger<SmoketestController> _logger = logger;
 
     [Function("SmoketestAll")]
@@ -39,7 +39,7 @@ public class SmoketestController(
             { "GoogleSheets", _googleSheet.SmoketestAsync() },
             { "MailChimp", _mailchimp.SmoketestAsync() },
             { "NodeBB", _nodeBb.SmoketestAsync() },
-            { "SendInBlue", _sendInBlue.SmoketestAsync() }
+            { "Brevo", _brevo.SmoketestAsync() }
         };
 
         await Task.WhenAll(results.Values);
@@ -109,13 +109,13 @@ public class SmoketestController(
         return response;
     }
 
-    [Function("SmoketestSendInBlue")]
-    public async Task<HttpResponseData> RunSendInBlueSmoketest(
-        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "smoketest/sendinblue")] HttpRequestData req)
+    [Function("SmoketestBrevo")]
+    public async Task<HttpResponseData> RunBrevoSmoketest(
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = "smoketest/brevo")] HttpRequestData req)
     {
-        _logger.LogInformation("Starting SendInBlue smoke test");
+        _logger.LogInformation("Starting Brevo smoke test");
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var result = await _sendInBlue.SmoketestAsync();
+        var result = await _brevo.SmoketestAsync();
         await response.WriteAsJsonAsync(result);
         return response;
     }

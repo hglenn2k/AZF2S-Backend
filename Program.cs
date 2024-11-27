@@ -13,7 +13,7 @@ var host = new HostBuilder()
         services.AddScoped<IGoogleSheetService, GoogleSheetService>();
         services.AddScoped<IMailchimpService, MailchimpService>();
         services.AddScoped<INodeBbService, NodeBbService>();
-        services.AddScoped<ISendInBlueService, SendInBlueService>();
+        services.AddScoped<IBrevoService, BrevoService>();
     })
     .Build();
 

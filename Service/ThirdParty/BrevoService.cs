@@ -4,7 +4,7 @@ using AZF2S_Backend.Service.ThirdParty.Interface;
 
 namespace AZF2S_Backend.Service.ThirdParty 
 {
-    public class SendInBlueService : ISendInBlueService
+    public class BrevoService : IBrevoService
     {
         public Task<ServiceResponse<bool>> SendEmailAsync(Email email)
         {

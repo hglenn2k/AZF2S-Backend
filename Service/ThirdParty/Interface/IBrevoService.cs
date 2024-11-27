@@ -3,7 +3,7 @@ using AZF2S_Backend.Model.ThirdParty.SendInBlue;
 
 namespace AZF2S_Backend.Service.ThirdParty.Interface
 {
-    public interface ISendInBlueService : IBaseThirdPartyService
+    public interface IBrevoService : IBaseThirdPartyService
     {
         Task<ServiceResponse<bool>> SendEmailAsync(Email email);
     }
