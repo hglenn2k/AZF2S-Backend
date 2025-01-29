@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace AZF2S_Backend.Model 
+namespace AZF2S_Backend.Model
 {
     public class Error(string message, LogLevel logLevel, Exception? exception = null)
     {
