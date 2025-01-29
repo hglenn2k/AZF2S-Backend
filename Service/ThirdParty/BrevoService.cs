@@ -6,12 +6,12 @@ namespace AZF2S_Backend.Service.ThirdParty
 {
     public class BrevoService : IBrevoService
     {
-        public Task<ServiceResponse<bool>> SendEmailAsync(Email email)
+        public Task<Result<bool>> SendEmailAsync(Email email)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> SmoketestAsync()
+        public Task<Result<bool>> SmoketestAsync()
         {
             throw new NotImplementedException();
         }

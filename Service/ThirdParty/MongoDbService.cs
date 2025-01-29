@@ -47,32 +47,32 @@ namespace AZF2S_Backend.Service.ThirdParty
             }
         }
 
-        public Task<ServiceResponse<T>> GetDocumentAsync<T>(string documentId)
+        public Task<Result<T>> GetDocumentAsync<T>(string documentId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<Dictionary<string, object>>> GetFieldsAsync(string documentId, List<string> fields)
+        public Task<Result<Dictionary<string, object>>> GetFieldsAsync(string documentId, List<string> fields)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> UpsertDocumentAsync<T>(string documentId, T data)
+        public Task<Result<bool>> UpsertDocumentAsync<T>(string documentId, T data)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> UpsertFieldsAsync(string documentId, Dictionary<string, object> updates)
+        public Task<Result<bool>> UpsertFieldsAsync(string documentId, Dictionary<string, object> updates)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> DeleteDocumentAsync(string documentId)
+        public Task<Result<bool>> DeleteDocumentAsync(string documentId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> SmoketestAsync()
+        public Task<Result<bool>> SmoketestAsync()
         {
             throw new NotImplementedException();
         }

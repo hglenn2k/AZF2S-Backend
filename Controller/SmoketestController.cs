@@ -1,4 +1,3 @@
-// Controller/SmoketestController.cs
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using System.Net;
@@ -32,7 +31,7 @@ public class SmoketestController(
         _logger.LogInformation("Starting all smoke tests");
         
         var response = req.CreateResponse(HttpStatusCode.OK);
-        var results = new Dictionary<string, Task<ServiceResponse<bool>>>
+        var results = new Dictionary<string, Task<Result<bool>>>
         {
             { "AppInsights", _appInsights.SmoketestAsync() },
             { "MongoDB", _mongoDb.SmoketestAsync() },
@@ -44,7 +43,7 @@ public class SmoketestController(
 
         await Task.WhenAll(results.Values);
 
-        var smokeTestResults = new Dictionary<string, ServiceResponse<bool>>();
+        var smokeTestResults = new Dictionary<string, Result<bool>>();
         foreach (var result in results)
         {
             smokeTestResults.Add(result.Key, await result.Value);

@@ -4,6 +4,6 @@ namespace AZF2S_Backend.Service.ThirdParty.Interface
 {
     public interface IGoogleSheetService : IBaseThirdPartyService
     {
-        Task<ServiceResponse<string>> GetSheetCsvAsync(string sheetId);
+        Task<Result<string>> GetSheetCsvAsync(string sheetId);
     }
 }

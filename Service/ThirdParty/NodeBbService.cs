@@ -5,7 +5,7 @@ namespace AZF2S_Backend.Service.ThirdParty
 {
     public class NodeBbService : INodeBbService
     {
-        public Task<ServiceResponse<bool>> SmoketestAsync()
+        public Task<Result<bool>> SmoketestAsync()
         {
             throw new NotImplementedException();
         }

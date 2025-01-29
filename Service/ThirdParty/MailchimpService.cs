@@ -5,17 +5,17 @@ namespace AZF2S_Backend.Service.ThirdParty
 {
     public class MailchimpService : IMailchimpService
     {
-        public Task<ServiceResponse<bool>> AddSubscriberAsync(string emailAddress)
+        public Task<Result<bool>> AddSubscriberAsync(string emailAddress)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> RemoveSubscriberAsync(string emailAddress)
+        public Task<Result<bool>> RemoveSubscriberAsync(string emailAddress)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<bool>> SmoketestAsync()
+        public Task<Result<bool>> SmoketestAsync()
         {
             throw new NotImplementedException();
         }

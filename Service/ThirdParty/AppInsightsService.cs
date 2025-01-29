@@ -5,7 +5,7 @@ namespace AZF2S_Backend.Service.ThirdParty
 {
     public class AppInsightsService : IAppInsightsService
     {
-        public Task<ServiceResponse<bool>> SmoketestAsync()
+        public Task<Result<bool>> SmoketestAsync()
         {
             throw new NotImplementedException();
         }

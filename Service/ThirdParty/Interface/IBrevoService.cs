@@ -5,6 +5,6 @@ namespace AZF2S_Backend.Service.ThirdParty.Interface
 {
     public interface IBrevoService : IBaseThirdPartyService
     {
-        Task<ServiceResponse<bool>> SendEmailAsync(Email email);
+        Task<Result<bool>> SendEmailAsync(Email email);
     }
 }
