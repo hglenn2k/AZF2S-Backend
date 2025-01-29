@@ -25,7 +25,6 @@ namespace AZF2S_Backend.Model
             ))
         );
 
-
         public class Builder
         {
             private TPayload? _payload;
